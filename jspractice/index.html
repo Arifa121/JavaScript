@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java <Script></Script></title>
+</head>
+<body>
+    <h1>Welcome</h1>
+
+    <script>
+      let firstname = 'ramya'
+      let lastname = 'murali'
+      let city = 'chennai'
+      console.log(firstname + ' ' + lastname + ' lives in ' + city)
+      console.log(`${firstname} ${lastname} lives in ${city}`)
+      let msg =`happy
+      birthday`
+      console.log(msg)
+      let items=5
+      let total=95
+      console.log(`you have ${items} items in your cart.
+      your bill amount is $${total}`) 
+      let cities =['chennai','madurai','trichy']
+      let marks=[57,77,77,4,36]
+      console.log(marks.length)
+      console.log(marks)
+      console.log(cities[0])
+      console.log(cities[cities.length-1])
+      let a=[1,2,3,[4,6],9,'maya']
+      console.log(a[4])
+      console.log(a[3])
+      
+      //2d array
+      let matrix = [[1,8,9],[2,0,31],[3,12,13]]
+      console.log(matrix[2])
+      console.log(matrix[2][1])
+
+     //array methods
+     let array=['a','b','c','d','e','f']
+     //push add element at the end and return new length
+     array.push('g')
+     console.log(array)
+
+     //pop removes element from the end 
+    console.log(array.pop())
+    console.log(array)
+
+    //shift removes element from the start of the array
+    console.log(array.shift())
+    console.log(array)
+    
+    console.log(array.unshift('a'))
+    console.log(array)
+     
+    //splice for delete use
+    //splice(startindex,no_of_elements_to_be_deleted_from startindex,value_to_be_inserted_from_startindex)
+    //if you dont want to delete then second parameter should be 0
+    array.splice(2,1)
+    console.log(array)
+
+    //splice for replace use
+    array.splice(1,1,'m')
+    console.log(array)
+
+    array.splice(1,3,'x','y','z')
+    console.log(array)
+
+    //splice as insert
+    array.splice(1,0,'b')
+    console.log(array)
+
+    //slice(starting index,ending index)
+    //ending index not included
+    console.log(array.slice(1,3))
+    console.log(array.slice(1))
+    console.log(array.slice(-4,-2))
+    console.log(array.slice(-4))
+
+    //reverse
+    array.reverse()
+    console.log(array)
+
+    console.log(array)
+ 
+    //join - convert array to string
+    let str = array.join()
+    console.log(str)
+    
+    //split - convert string to array
+    let str3='m,n,o,p,b,a'
+    let arr=str3.split(',')
+    console.log(arr)
+
+    //concat and spread operator
+    let fa=[1,2,3]
+    let sa=[4,5,6]
+    let ja=[fa,sa]
+    console.log(ja)
+    let j1=fa.concat(sa)
+    console.log(j1)
+    let joined=[...fa,...sa]
+    console.log(joined)
+
+    let arr1=[5,8,10,7,9,11]
+    arr1.splice(3,3,17,19,111)
+    console.log(arr1)
+    arr1.unshift(100)
+    console.log(arr1)
+    arr1.push(200)
+    console.log(arr1)
+    let pwd_correct = true
+    if(pwd_correct){
+      console.log('u are logged in')
+    }
+    else{
+      console.log(' incorrect password')
+    }
+     
+    </script> 
+</body>
+</html>
+
+<!--
+    Math.random 0 to 1
+    so
+    Math.random()*6
+    Math.sqrt
+    Math.min
+    Math.abs
+    Math.floor
+    Math.ceil
+    Math.pow()
+    Math.PI
+    Math.E
+    Math -- object
+ -->
+
+ <!--
+    string - group of characters
+
+    let str1 = "strive not to be a success, "
+    let str2 = "but rather to be a value"
+
+    str1+str2
+    str1.concat(str2)
+    str1.concat("hi",sstr2)
+
+      Partitioning string(string  indexing start from 0)
+    
+
+    1) slice(start, end) :-  
+      str2.slice(4,10)  ---  'rather' 
+      str2.slice(4)     ---  'rather to be a value'  
+      str2.slice(-5)    ---  'value'
+    2) substring(start, end) :-
+     str2.substring(4,10) ---  'rather'
+    3) substr(start, end)
+     str2.substr(4,10)  --- 'rather to'
+
+
+    replace
+    str1.replace('strive','aim') --- 'aim not to be a success'  if more than 1 strive present then only 1st strive get replaced
+    str1.replaceall(strive','aim') -- will replace all
+
+    str1.toUpperCase()
+    str1.toLowerCase()
+
+    str1.length
+    
+    let str3='    hi    '
+    str3.trim()  ---- 'hi'
+    str3.trimStart() ---- 'hi    '
+    str3.trimEnd()   ---- '    hi'
+
+    let bill='rs.10'
+    bill.padEnd(7,'0')
+    'rs.1000'
+    let newbill = '5'
+    newbill.padStart(4,'0')
+    '0005'
+
+    str1[1]
+    't'
+    str1.charAt(1)
+    't'
+    str1.charCodeAt(1)
+    116
+
+    str1.indexOf('e')
+    5
+    str1.lastindexOf('e')
+    23
+    str1.lastindexOf('z') //illadha character
+    -1
+    str1.search('not')
+    7
+    str1.search('nott')
+    -1
+    str1.includes('not')
+    true
+    str1.startsWith('s')
+    true
+ -->

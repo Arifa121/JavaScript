@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>length converter</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section>
+     <div class="container d-flex min-vh-100 align-items-center justify-content-center">
+        <form action="">
+            <div class="mb-3 text-center">
+                <h3 class="display-5">cm to inches</h3>
+            </div>
+            <div class="mb-3">
+                <label for="cmval" class="form-label fs-3">Enter cm:</label>
+                <input type="text" id="cmval" class="form-control">
+            </div>
+            <div class="mb-3 col-md-6 col-12 py-lg-2 ">
+                <button type="submit" onclick="convert()" class="btn btn-primary">Convert</button>
+            </div>
+            <div id="result" class="text-center">
+
+            </div>
+        </form>
+    </div>
+
+</section>
+  <script>
+    function convert(){
+        let cmval = Number(document.getElementById("cmval").value)
+        let inchval = cmval/2.54
+        let result = document.getElementById("result")
+        result.innerHTML = inchval.toFixed(3) + " inches"
+    
+    }
+    
+  </script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="script.js/"></script>
+</body>
+</html>
