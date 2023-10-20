@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrom</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section>
+     <div class="container d-flex min-vh-100 align-items-center justify-content-center">
+        <form onsubmit="return false">
+            <div class="mb-3 text-center">
+                <h3 class="display-5">Palindrom Checker</h3>
+            </div>
+            <div class="mb-3">
+                <label for="celval" class="form-label fs-3">Enter sentence:</label>
+                <input type="text" id="words" class="form-control" placeholder="sentence">
+            </div>
+            <div class="mb-3 col-md-6 col-12 py-lg-2 ">
+                <button type="submit" onclick="palindrom()" class="btn btn-primary">Check palindrom or not</button>
+            </div>
+            <div id="result" class="text-center mb-3 col-md-6 col-12 py-lg-2">
+
+            </div>
+        </form>
+    </div>
+
+</section>
+  <script>
+    function palindrom(){
+        let str=(document.getElementById("words").value).split(' ')
+        let str1=str.reverse()
+        let result = document.querySelector('#result')
+        if(str.equals(str1)){
+            result.innerHTML="Palindrom"
+        }
+        else{
+            result.innerHTML="Not a Palindrom"
+        }
+        
+    }
+    
+  </script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  
+</body>
+</html>

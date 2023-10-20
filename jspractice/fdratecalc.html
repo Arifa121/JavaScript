@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD rate calculator</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section>
+     <div class="container d-flex min-vh-100 align-items-center justify-content-center">
+        <form onsubmit="return false">
+            <div class="mb-3 text-center">
+                <h3 class="display-5">FD rate calculator</h3>
+            </div>
+            <div class="mb-3">
+                <label for="celval" class="form-label fs-3">Enter Months:</label>
+                <input type="text" id="fdmon" class="form-control" placeholder="tenure months">
+            </div>
+            <div class="mb-3 col-md-6 col-12 py-lg-2 ">
+                <button type="submit" onclick="fdrate()" class="btn btn-primary">Calculate</button>
+            </div>
+            <div id="result" class="text-center mb-3 col-md-6 col-12 py-lg-2">
+
+            </div>
+        </form>
+    </div>
+
+</section>
+  <script>
+    function fdrate(){
+        const months=Number(document.getElementById("fdmon").value)
+        let rate=0
+        if(months<3){
+            rate=5.8
+        }
+        else if(months>=3 && months<=6){
+            rate=6.5
+        }
+        else if(months>=7 && months<=9){
+            rate=6.8
+            
+        }
+        else{
+            rate=7
+        }
+        let result = document.querySelector('#result')
+        result.innerHTML="your interest rate is "+rate+"%"
+    }
+    
+  </script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  
+</body>
+</html>

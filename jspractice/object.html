@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user1={
+            name:'ramya',
+            age:22,
+            login(){
+                console.log('you are logged in')
+            },
+            logout(){
+                console.log('you are logged out')
+            }
+
+        }
+        let user2={
+            name:'ayisha',
+            age:21,
+            login(){
+                console.log('hii',this.name)
+                console.log('you are logged in')
+            },
+            logout(){
+                console.log('you are logged out')
+            }
+
+        }
+        let user3={
+            name:'menaga',
+            age:25,
+            login(){
+                console.log('hii',this.name)
+                console.log('you are logged in')
+            },
+            logout(){
+                console.log('you are logged out')
+            }
+
+        }
+        user2.login()
+        user3.login()
+//class is a template of properties
+//es6 class keyword
+        class User{ //base class,super,parent
+            static numberofusers=0
+            constructor(name,age){ //name constructor parameter thaan name
+                //instance variable
+                this.name=name  //this.name object property 
+                this.age=age
+                User.numberofusers++
+            }
+            login(){
+                console.log('hii',this.name)
+                console.log('you are logged in')
+            }
+            logout(){
+                console.log('you are logged out')
+            }
+            static displaytotaluser(){
+                console.log('total of users',User.numberofusers)
+            }
+        }
+        //inheritance - acquiring properties of a base class
+        class paiduser extends User{ //derive,child,subclass
+            constructor(name,age){
+                super(name,age)
+                this.storage=100
+            }
+            
+            message(){
+                console.log('you have 10gb free storage')
+            }
+            //overriden
+            login(){
+                super.login()
+                console.log('hii',this.name,'you are logged in as paid user')
+                return this
+            }
+        }
+
+        console.log('----------------------')
+        let userone=new User('vidya',21)
+        let usertwo=new User('vindhiya',22)
+        let userthree=new paiduser('sujith',43)
+        userthree.login()
+        userthree.message()
+        console.log('----------------------')
+
+        usertwo.login() 
+        let movie='ps1' //.length wrapper class
+        let music=new String('rrr')
+        console.log('number of users',User.numberofusers)
+        User.displaytotaluser() //static method calling (object ku samadham illama podhuva andha class ku samandhapatadhu)
+        userone.login()//normal method
+
+        //method chaining
+        console.log('----------------')
+        userthree.login().message()
+        console.log('----------------')
+
+        function Users(name,age){
+            this.name=name
+            this.age=age
+        }
+        Users.prototype.login=function(){
+            console.log('hi',this.name)
+            console.log("you are logged in")
+        }
+        let users1=new Users('abdul',29)
+        users1.login()
+
+        //get and set
+
+        class Temperature{
+            constructor(temp){
+                this._temp=temp
+            }
+            get temp(){
+                return `${this._temp} degree celcius`
+            }
+            set temp(temp){
+                if(temp>100)
+                   temp=100  
+                this._temp=temp
+            }
+        }
+        //shouldnt do this temp1._temp=150 developers dont do this
+        let temp1=new Temperature(35)
+        temp1.temp=150
+        console.log(temp1.temp)
+        //es6-modules
+        export default class Car{
+            drive(){
+                console.log('driving')
+            }
+        }
+        export function fillgas(){
+            console.log('filling gas')
+        }
+        function repair(){
+            console.log('repairing')
+        }
+
+       // export default Car
+        //export{fillgas,repair}
+        //endha file la use panramo anga
+        // import pannum
+        //import Car from './filename.js'
+        // <script type="module" src=""><//script>
+        
+    </script>
+    
+</body>
+</html>
