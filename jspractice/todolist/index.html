@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <style>
+        html,body{
+            margin: 0;
+            font-family: 'Poppins',sans-serif;
+            
+        }
+        h2{
+            position: relative;
+            top: 300px;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        #wrapper{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">TODO LIST</h2>
+
+        <div class="d-flex justify-content-center min-vh-100 align-items-center" >
+            
+            <div class="row" id="wrapper">
+                <div class="col">
+                   <input type="text" id="input" class="p-1">
+                   <button type="button"  class="rounded-1 btn btn-primary" id="add">Add</button>
+                </div>
+            </div>
+            <div id="todolist" class="row">
+    
+            </div>
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+</body>
+</html>
